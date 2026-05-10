@@ -29,7 +29,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]
-
+APPEND_SLASH = False
 ROOT_URLCONF = "pdf_magic.urls"
 WSGI_APPLICATION = "pdf_magic.wsgi.application"
 
