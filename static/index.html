@@ -716,11 +716,12 @@ function renderInfo(data){
     document.body.appendChild(d);
   }
 })();
-  // Colle ça avant la fermeture </script>
-setInterval(() => {
-  fetch(getDJUrl() + '/api/pdf/ping', { method: 'HEAD', mode: 'no-cors' })
-    .catch(() => {});
-}, 600000); // toutes les 10 min
+ // Keep-alive Serveur B — toutes les 5 min
+(function keepAlive() {
+  const url = (document.getElementById('set-dj-url')?.value || 'https://pdf-magic-backend-pxb5.onrender.com').replace(/\/$/, '');
+  fetch(url, { method: 'HEAD', mode: 'no-cors' }).catch(() => {});
+  setTimeout(keepAlive, 300000); // 5 minutes
+})();
 </script>
 </body>
 </html>
