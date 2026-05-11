@@ -23,4 +23,5 @@ urlpatterns = [
 
     # ── Vol. XII  Niveaux de gris ────────────────────────────
     path("grayscale",    views.grayscale_pdf,   name="pdf-grayscale"),
+     path("ping", views.ping, name="ping"),
 ]
