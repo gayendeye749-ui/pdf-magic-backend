@@ -42,14 +42,13 @@ DATABASES = {
 }
 
 # ── CORS ──────────────────────────────────────────────────────────────────────
-# En production, remplacez par vos domaines exacts
-CORS_ALLOWED_ORIGINS = os.getenv(
-    "CORS_ALLOWED_ORIGINS",
-    "http://localhost,http://127.0.0.1"
-).split(",")
-
+CORS_ALLOWED_ORIGINS = [
+    "https://pdf-magic-frontend.onrender.com",
+    "http://localhost",
+    "http://127.0.0.1",
+]
 # APRÈS
-CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL_ORIGINS", "False") == "True"
+CORS_ALLOW_ALL_ORIGINS = True
 
 # ── Fichiers uploadés ─────────────────────────────────────────────────────────
 MEDIA_ROOT = BASE_DIR / "media"
