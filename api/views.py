@@ -461,3 +461,13 @@ def grayscale_pdf(request):
 
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+        # ═════════════════════════════════════════════════════════════
+# Keep-alive — Ping
+# ═════════════════════════════════════════════════════════════
+
+from django.views.decorators.http import require_http_methods
+
+@csrf_exempt
+@require_http_methods(["GET", "HEAD"])
+def ping(request):
+    return JsonResponse({"status": "ok"})
