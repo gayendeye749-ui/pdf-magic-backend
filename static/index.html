@@ -716,6 +716,11 @@ function renderInfo(data){
     document.body.appendChild(d);
   }
 })();
+  // Colle ça avant la fermeture </script>
+setInterval(() => {
+  fetch(getDJUrl() + '/api/pdf/ping', { method: 'HEAD', mode: 'no-cors' })
+    .catch(() => {});
+}, 600000); // toutes les 10 min
 </script>
 </body>
 </html>
